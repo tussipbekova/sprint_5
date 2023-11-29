@@ -8,3 +8,15 @@ def driver():
     yield driver
 
     driver.quit()
+
+@pytest.fixture()
+def email():
+    return 'sayatussipbekova3888@yandex.ru'
+
+@pytest.fixture()
+def password():
+    return "123456"
+
+@pytest.fixture()
+def main_page_url():
+    return 'https://stellarburgers.nomoreparties.site/'

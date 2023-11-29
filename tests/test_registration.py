@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
 
-class TestWebsiteFunctionality:
+class TestRegistration:
     def test_registration_success(self, driver):
         #переходим на страницу авторизации
         driver.find_element(By.CSS_SELECTOR, ".button_button__33qZ0").click()
