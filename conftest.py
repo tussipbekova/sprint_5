@@ -1,22 +1,28 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
-@pytest.fixture()
+DRIVER_PATH = "../chromedriver"
+
+
+@pytest.fixture(scope="function")
 def driver():
-    driver = webdriver.Chrome()  # Or any other browser
+    options = Options()
+    options.add_argument("--window-size=1920,1080")
+    driver = webdriver.Chrome(options=options)
     driver.get("https://stellarburgers.nomoreparties.site/")
     yield driver
 
     driver.quit()
 
-@pytest.fixture()
+@pytest.fixture(scope="function")
 def email():
     return 'sayatussipbekova3888@yandex.ru'
 
-@pytest.fixture()
+@pytest.fixture(scope="function")
 def password():
     return "123456"
 
-@pytest.fixture()
+@pytest.fixture(scope="function")
 def main_page_url():
     return 'https://stellarburgers.nomoreparties.site/'

@@ -42,6 +42,7 @@ class TestRegistration:
 
         error_text = driver.find_element(By.CSS_SELECTOR, ".input__error").text
 
+        # проверяем что текст ошибки равен 'Некорректный пароль'
         assert error_text == 'Некорректный пароль'
 
 
